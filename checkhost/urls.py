@@ -5,4 +5,5 @@ from .views import CheckTCP
 
 urlpatterns = [
     path('tcp', CheckTCP.as_view(), name='tcp'),
+    path('tcp/', CheckTCP.as_view(), name='tcp'),
 ]
