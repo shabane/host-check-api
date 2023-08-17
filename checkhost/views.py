@@ -14,6 +14,8 @@ class CheckTCP(views.APIView):
             __port = request.GET['port']
             _ = core.is_tcp_open(__host, __port, __timeout)
             return Response({
-                'result': _,
+                'result': {
+                    'ok': _,
+                },
                 'node': NODE
             })
