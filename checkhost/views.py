@@ -3,7 +3,7 @@ from rest_framework import views
 from django.http import HttpResponse
 from . import core
 from rest_framework.response import Response
-
+from checkhost_prj.settings import NODE
 
 class CheckTCP(views.APIView):
     def get(self, request):
@@ -13,5 +13,5 @@ class CheckTCP(views.APIView):
             _ = core.is_tcp_open(__host, __port)
             return Response({
                 'result': _,
-                'node': '...'
+                'node': NODE
             })
