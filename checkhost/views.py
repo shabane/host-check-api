@@ -8,7 +8,7 @@ from checkhost_prj.settings import NODE
 class CheckTCP(views.APIView):
     def get(self, request):
         if request.GET.get('host') and request.GET.get('port'):
-            __timeout = request.GET.get('timeout') if request.GET.get('timeout') else 5
+            __timeout = request.GET.get('timeout') if request.GET.get('timeout') else '5'
             __timeout = int(__timeout) if __timeout.isdigit() else core.err("timeout should be integer")
             __host = request.GET['host']
             __port = request.GET['port']
