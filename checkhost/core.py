@@ -17,3 +17,6 @@ def is_tcp_open(host: str, port: int, timeout: int = 5) -> bool:
     s.close()
 
     return is_open
+
+def err(msg: str):
+    raise Exception(msg)
